@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E8A9A0E230E9F2800A90EC1 /* PoliceCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9A0D230E9F2800A90EC1 /* PoliceCharacter.swift */; };
+		4E8A9A10230EF1B900A90EC1 /* Police_attack.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9A0F230EF1B900A90EC1 /* Police_attack.atlas */; };
+		4E8A9A12230EF54300A90EC1 /* Police_jump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9A11230EF54300A90EC1 /* Police_jump.atlas */; };
+		4E8A9A14230EF54900A90EC1 /* Police_run.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9A13230EF54900A90EC1 /* Police_run.atlas */; };
+		4E8A9A16230FD2D500A90EC1 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A9A15230FD2D500A90EC1 /* AudioModel.swift */; };
+		4E8A9A1A230FD46300A90EC1 /* Switch-Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9A18230FD46300A90EC1 /* Switch-Click.wav */; };
+		4E8A9A1B230FD46300A90EC1 /* Joy & Calm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A9A19230FD46300A90EC1 /* Joy & Calm.m4a */; };
+		4EB4F10C230BF97300277C4A /* NinjaCat_attack_punch.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4EB4F10B230BF97300277C4A /* NinjaCat_attack_punch.atlas */; };
+		4EB4F10E230BFAE600277C4A /* NinjaCat_walk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4EB4F10D230BFAE600277C4A /* NinjaCat_walk.atlas */; };
 		4EF8CEF3230BE3730095E044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CEF2230BE3730095E044 /* AppDelegate.swift */; };
-		4EF8CEF5230BE3730095E044 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CEF4230BE3730095E044 /* GameScene.sks */; };
-		4EF8CEF7230BE3730095E044 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CEF6230BE3730095E044 /* Actions.sks */; };
 		4EF8CEF9230BE3730095E044 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CEF8230BE3730095E044 /* GameScene.swift */; };
 		4EF8CEFB230BE3740095E044 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CEFA230BE3740095E044 /* GameViewController.swift */; };
 		4EF8CEFE230BE3740095E044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CEFC230BE3740095E044 /* Main.storyboard */; };
 		4EF8CF00230BE3740095E044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CEFF230BE3740095E044 /* Assets.xcassets */; };
 		4EF8CF03230BE3740095E044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF01230BE3740095E044 /* LaunchScreen.storyboard */; };
+		4EF8CF0D230BEAAF0095E044 /* NinjaCat_attack_kick.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8CF0C230BEAAF0095E044 /* NinjaCat_attack_kick.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E8A9A0D230E9F2800A90EC1 /* PoliceCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceCharacter.swift; sourceTree = "<group>"; };
+		4E8A9A0F230EF1B900A90EC1 /* Police_attack.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Police_attack.atlas; sourceTree = "<group>"; };
+		4E8A9A11230EF54300A90EC1 /* Police_jump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Police_jump.atlas; sourceTree = "<group>"; };
+		4E8A9A13230EF54900A90EC1 /* Police_run.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Police_run.atlas; sourceTree = "<group>"; };
+		4E8A9A15230FD2D500A90EC1 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		4E8A9A18230FD46300A90EC1 /* Switch-Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Switch-Click.wav"; sourceTree = "<group>"; };
+		4E8A9A19230FD46300A90EC1 /* Joy & Calm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joy & Calm.m4a"; sourceTree = "<group>"; };
+		4EB4F10B230BF97300277C4A /* NinjaCat_attack_punch.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NinjaCat_attack_punch.atlas; sourceTree = "<group>"; };
+		4EB4F10D230BFAE600277C4A /* NinjaCat_walk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NinjaCat_walk.atlas; sourceTree = "<group>"; };
 		4EF8CEEF230BE3730095E044 /* BelajarAnimasiDenganSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelajarAnimasiDenganSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF8CEF2230BE3730095E044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EF8CEF4230BE3730095E044 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		4EF8CEF6230BE3730095E044 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		4EF8CEF8230BE3730095E044 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4EF8CEFA230BE3740095E044 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4EF8CEFD230BE3740095E044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EF8CEFF230BE3740095E044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EF8CF02230BE3740095E044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EF8CF04230BE3740095E044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF8CF0C230BEAAF0095E044 /* NinjaCat_attack_kick.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = NinjaCat_attack_kick.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +57,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E8A9A17230FD46300A90EC1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4E8A9A18230FD46300A90EC1 /* Switch-Click.wav */,
+				4E8A9A19230FD46300A90EC1 /* Joy & Calm.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4EF8CEE6230BE3730095E044 = {
 			isa = PBXGroup;
 			children = (
+				4E8A9A0D230E9F2800A90EC1 /* PoliceCharacter.swift */,
+				4E8A9A15230FD2D500A90EC1 /* AudioModel.swift */,
 				4EF8CEF1230BE3730095E044 /* BelajarAnimasiDenganSpriteKit */,
 				4EF8CEF0230BE3730095E044 /* Products */,
 			);
@@ -60,9 +87,14 @@
 		4EF8CEF1230BE3730095E044 /* BelajarAnimasiDenganSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				4E8A9A17230FD46300A90EC1 /* Sounds */,
+				4E8A9A13230EF54900A90EC1 /* Police_run.atlas */,
+				4E8A9A11230EF54300A90EC1 /* Police_jump.atlas */,
+				4E8A9A0F230EF1B900A90EC1 /* Police_attack.atlas */,
+				4EB4F10D230BFAE600277C4A /* NinjaCat_walk.atlas */,
+				4EB4F10B230BF97300277C4A /* NinjaCat_attack_punch.atlas */,
+				4EF8CF0C230BEAAF0095E044 /* NinjaCat_attack_kick.atlas */,
 				4EF8CEF2230BE3730095E044 /* AppDelegate.swift */,
-				4EF8CEF4230BE3730095E044 /* GameScene.sks */,
-				4EF8CEF6230BE3730095E044 /* Actions.sks */,
 				4EF8CEF8230BE3730095E044 /* GameScene.swift */,
 				4EF8CEFA230BE3740095E044 /* GameViewController.swift */,
 				4EF8CEFC230BE3740095E044 /* Main.storyboard */,
@@ -132,10 +164,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF8CEFE230BE3740095E044 /* Main.storyboard in Resources */,
-				4EF8CEF5230BE3730095E044 /* GameScene.sks in Resources */,
 				4EF8CF00230BE3740095E044 /* Assets.xcassets in Resources */,
+				4EB4F10E230BFAE600277C4A /* NinjaCat_walk.atlas in Resources */,
+				4E8A9A12230EF54300A90EC1 /* Police_jump.atlas in Resources */,
+				4E8A9A14230EF54900A90EC1 /* Police_run.atlas in Resources */,
 				4EF8CF03230BE3740095E044 /* LaunchScreen.storyboard in Resources */,
-				4EF8CEF7230BE3730095E044 /* Actions.sks in Resources */,
+				4E8A9A10230EF1B900A90EC1 /* Police_attack.atlas in Resources */,
+				4EB4F10C230BF97300277C4A /* NinjaCat_attack_punch.atlas in Resources */,
+				4E8A9A1B230FD46300A90EC1 /* Joy & Calm.m4a in Resources */,
+				4EF8CF0D230BEAAF0095E044 /* NinjaCat_attack_kick.atlas in Resources */,
+				4E8A9A1A230FD46300A90EC1 /* Switch-Click.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +187,8 @@
 				4EF8CEF9230BE3730095E044 /* GameScene.swift in Sources */,
 				4EF8CEFB230BE3740095E044 /* GameViewController.swift in Sources */,
 				4EF8CEF3230BE3730095E044 /* AppDelegate.swift in Sources */,
+				4E8A9A0E230E9F2800A90EC1 /* PoliceCharacter.swift in Sources */,
+				4E8A9A16230FD2D500A90EC1 /* AudioModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85YSJX97S8;
 				INFOPLIST_FILE = BelajarAnimasiDenganSpriteKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85YSJX97S8;
 				INFOPLIST_FILE = BelajarAnimasiDenganSpriteKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
