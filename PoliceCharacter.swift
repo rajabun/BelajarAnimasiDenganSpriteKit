@@ -17,43 +17,44 @@ class PoliceCharacter: SKSpriteNode
     
     func buildCharacter()
     {
-        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_run")
-        var walkFrames: [SKTexture] = []
+        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_dance")
+        var Frames: [SKTexture] = []
         
         let numImages = ninjaCatAnimatedAtlas.textureNames.count
-        if game.kickButton.name == "WalkButton"
+        if game.danceButton.name == "DanceButton"
         {
             for i in 1...numImages
             {
-                let ninjaCatWalkTextureName = "police_run_\(i)"
-                walkFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
+                let ninjaCatWalkTextureName = "police_dance_\(i)"
+                Frames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
             }
-            ninjaCatAnimationFrames = walkFrames
+            ninjaCatAnimationFrames = Frames
             ninjaCat.size = CGSize(width: 357, height: 477)
-            ninjaCat.name = "ninjaCatWalk"
+            ninjaCat.name = "ninjaCatDance"
         }
-        else if game.punchButton.name == "KickButton"
-        {
-            for i in 1...numImages
-            {
-                let ninjaCatWalkTextureName = "police_attack_\(i)"
-                walkFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
-            }
-            ninjaCatAnimationFrames = walkFrames
-            ninjaCat.size = CGSize(width: 357, height: 477)
-            ninjaCat.name = "ninjaCatKick"
-        }
-        else if game.punchButton.name == "PunchButton"
+        else if game.makanButton.name == "RunButton"
         {
             for i in 1...numImages
             {
                 let ninjaCatWalkTextureName = "police_jump_\(i)"
-                walkFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
+                Frames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
             }
-            ninjaCatAnimationFrames = walkFrames
+            ninjaCatAnimationFrames = Frames
             ninjaCat.size = CGSize(width: 357, height: 477)
-            ninjaCat.name = "ninjaCatPunch"
+            ninjaCat.name = "ninjaCatRun"
         }
+        else if game.obatButton.name == "ObatButton"
+        {
+            for i in 1...numImages
+            {
+                let ninjaCatWalkTextureName = "police_attack_\(i)"
+                Frames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
+            }
+            ninjaCatAnimationFrames = Frames
+            ninjaCat.size = CGSize(width: 357, height: 477)
+            ninjaCat.name = "ninjaCatAttack"
+        }
+        
         //        let firstFrameTexture = ninjaCatAnimationFrames[0]
         //        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
         ninjaCat.position = game.updateLocation
@@ -62,32 +63,32 @@ class PoliceCharacter: SKSpriteNode
     
     func animateCharacter()
     {
-        if game.kickButton.name == "WalkButton"
+        if game.danceButton.name == "DanceButton"
         {
             ninjaCat.run(SKAction.repeatForever(
                 SKAction.animate(with: ninjaCatAnimationFrames,
                                  timePerFrame: 0.1,
                                  resize: false,
                                  restore: true)),
-                         withKey:"walkingInPlaceNinjaCat")
+                         withKey:"dancingInPlaceNinjaCat")
         }
-        else if game.kickButton.name == "KickButton"
+        else if game.makanButton.name == "RunButton"
         {
             ninjaCat.run(SKAction.repeatForever(
                 SKAction.animate(with: ninjaCatAnimationFrames,
                                  timePerFrame: 0.1,
                                  resize: false,
                                  restore: true)),
-                         withKey:"attackKickInPlaceNinjaCat")
+                         withKey:"runInPlaceNinjaCat")
         }
-        else if game.kickButton.name == "PunchButton"
+        else if game.obatButton.name == "ObatButton"
         {
             ninjaCat.run(SKAction.repeatForever(
                 SKAction.animate(with: ninjaCatAnimationFrames,
                                  timePerFrame: 0.1,
                                  resize: false,
                                  restore: true)),
-                         withKey:"attackPunchInPlaceNinjaCat")
+                         withKey:"attackInPlaceNinjaCat")
         }
     }
 }

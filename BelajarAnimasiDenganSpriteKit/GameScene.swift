@@ -16,18 +16,22 @@ enum ZPositions: Int
     case otherNodes
 }
 
-
 class GameScene: SKScene
 {
     private var ninjaCat = SKSpriteNode()
     private var ninjaCatAnimationFrames: [SKTexture] = []
     var updateLocation: CGPoint = CGPoint(x: 458, y: 300)
     let background = SKSpriteNode(imageNamed: "HomeBackground.png")
-    let kickButton = SKSpriteNode(imageNamed: "ObatButton.png")
-    let punchButton = SKSpriteNode(imageNamed: "MakanButton.png")
-    let walkButton = SKSpriteNode(imageNamed: "MusicButton.png")
+    let obatButton = SKSpriteNode(imageNamed: "ObatButton.png")
+    let makanButton = SKSpriteNode(imageNamed: "MakanButton.png")
+    let danceButton = SKSpriteNode(imageNamed: "MusicButton.png")
+    let backButton = SKSpriteNode(imageNamed: "BackButton.png")
+    var smileEmojiView = SKSpriteNode(imageNamed: "SmileEmoji.png")
+    var progressBarView = SKSpriteNode(imageNamed: "ProgressBarEmoticons50%.png")
+//    let halfOvalImage = SKSpriteNode(imageNamed: "HalfOvalPlayMenu.png")
     
     var audioReady = AudioModel()
+    var viewController: UIViewController?
     
     override func didMove(to view: SKView)
     {
@@ -35,124 +39,153 @@ class GameScene: SKScene
         background.zPosition = CGFloat(ZPositions.background.rawValue)
         addChild(background)
         
-        kickButton.position = CGPoint(x: 816, y: 494)
-        kickButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
-        kickButton.size = CGSize(width: 79, height: 79)
-        kickButton.name = "KickButton"
-        addChild(kickButton)
+//        halfOvalImage.position = CGPoint(x: 830, y: 365)
+//        background.zPosition = CGFloat(ZPositions.foreground.rawValue)
+//        halfOvalImage.name = "HalfOval"
+//        addChild(halfOvalImage)
         
-        punchButton.position = CGPoint(x: 768, y: 336)
-        punchButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
-        punchButton.size = CGSize(width: 96, height: 95)
-        punchButton.name = "PunchButton"
-        addChild(punchButton)
+        obatButton.position = CGPoint(x: 845, y: 532)
+        obatButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //obatButton.size = CGSize(width: 79, height: 79)
+        obatButton.name = "ObatButton"
+        addChild(obatButton)
         
-        walkButton.position = CGPoint(x: 807, y: 194)
-        walkButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
-        walkButton.size = CGSize(width: 79, height: 79)
-        walkButton.name = "WalkButton"
-        addChild(walkButton)
+        makanButton.position = CGPoint(x: 815, y: 381)
+        makanButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //makanButton.size = CGSize(width: 96, height: 95)
+        makanButton.name = "MakanButton"
+        addChild(makanButton)
         
-        buildWalk()
-        animateWalk()
+        danceButton.position = CGPoint(x: 854, y: 232)
+        danceButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //danceButton.size = CGSize(width: 79, height: 79)
+        danceButton.name = "DanceButton"
+        addChild(danceButton)
+        
+        backButton.position = CGPoint(x: 85, y: 671)
+        backButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //backButton.size = CGSize(width: 79, height: 79)
+        backButton.name = "BackButton"
+        addChild(backButton)
+        
+        smileEmojiView.position = CGPoint(x: 967, y: 590)
+        smileEmojiView.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //smileEmojiView.size = CGSize(width: 79, height: 79)
+        smileEmojiView.name = "SmileEmojiView"
+        addChild(smileEmojiView)
+        
+        progressBarView.position = CGPoint(x: 967, y: 381)
+        progressBarView.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //progressBarView.size = CGSize(width: 79, height: 79)
+        progressBarView.name = "ProgressBarView"
+        addChild(progressBarView)
+        
+        buildDance()
+        animateDance()
     }
     
-    func buildWalk()
+    func buildDance()
     {
-        let ninjaCatWalkAnimatedAtlas = SKTextureAtlas(named: "Police_run")
-        var walkFrames: [SKTexture] = []
+        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_dance")
+        var danceFrames: [SKTexture] = []
         
-        let numImages = ninjaCatWalkAnimatedAtlas.textureNames.count
+        let numImages = ninjaCatAnimatedAtlas.textureNames.count
         for i in 1...numImages
         {
-            let ninjaCatWalkTextureName = "police_run_\(i)"
-            walkFrames.append(ninjaCatWalkAnimatedAtlas.textureNamed(ninjaCatWalkTextureName))
+            let ninjaCatTextureName = "police_dance_\(i)"
+            danceFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatTextureName))
         }
-        ninjaCatAnimationFrames = walkFrames
+        ninjaCatAnimationFrames = danceFrames
         
-        //        let firstFrameTexture = ninjaCatAnimationFrames[0]
-        //        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
-        ninjaCat.position = updateLocation
+//        let firstFrameTexture = ninjaCatAnimationFrames[0]
+//        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
+//        ninjaCat.position = updateLocation
+        ninjaCat.position = CGPoint(x: frame.midX, y: 336)
         ninjaCat.zPosition = CGFloat(ZPositions.player.rawValue)
-        ninjaCat.size = CGSize(width: 357, height: 477)
-        ninjaCat.name = "ninjaCatWalk"
+//        ninjaCat.size = CGSize(width: 136, height: 301)
+        ninjaCat.size = CGSize(width: 386, height: 422)
+        ninjaCat.name = "ninjaCatDance"
         addChild(ninjaCat)
     }
     
-    func animateWalk()
+    func animateDance()
     {
         ninjaCat.run(SKAction.repeatForever(
             SKAction.animate(with: ninjaCatAnimationFrames,
                              timePerFrame: 0.1,
                              resize: false,
                              restore: true)),
-                     withKey:"walkingInPlaceNinjaCat")
+                     withKey:"dancingInPlaceNinjaCat")
     }
     
-    func buildAttackKick()
+    func buildRun()
     {
-        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_attack")
-        var attackKickFrames: [SKTexture] = []
+        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_run")
+        var runFrames: [SKTexture] = []
         
         let numImages = ninjaCatAnimatedAtlas.textureNames.count
         for i in 1...numImages
         {
-            let ninjaCatTextureName = "Police_attack_\(i)"
-            attackKickFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatTextureName))
+            let ninjaCatTextureName = "police_run_\(i)"
+            runFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatTextureName))
         }
-        ninjaCatAnimationFrames = attackKickFrames
+        ninjaCatAnimationFrames = runFrames
         
-        //        let firstFrameTexture = ninjaCatAnimationFrames[0]
-        //        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
-        ninjaCat.position = updateLocation
+//        let firstFrameTexture = ninjaCatAnimationFrames[0]
+//        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
+//        ninjaCat.position = updateLocation
+        ninjaCat.position = CGPoint(x: frame.midX, y: frame.midY)
         ninjaCat.zPosition = CGFloat(ZPositions.player.rawValue)
-        ninjaCat.size = CGSize(width: 357, height: 477)
-        ninjaCat.name = "ninjaCatKick"
-        addChild(ninjaCat)
-    }
-    
-    //animate ninja cat to kick
-    func animateAttackKick()
-    {
-        ninjaCat.run(SKAction.repeatForever(
-            SKAction.animate(with: ninjaCatAnimationFrames,
-                             timePerFrame: 0.1,
-                             resize: false,
-                             restore: true)),
-                     withKey:"attackKickInPlaceBear")
-    }
-    
-    func buildAttackPunch()
-    {
-        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_jump")
-        var attackPunchFrames: [SKTexture] = []
-        
-        let numImages = ninjaCatAnimatedAtlas.textureNames.count
-        for i in 1...numImages
-        {
-            let ninjaCatTextureName = "Police_jump_\(i)"
-            attackPunchFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatTextureName))
-        }
-        ninjaCatAnimationFrames = attackPunchFrames
-        
-        //        let firstFrameTexture = ninjaCatAnimationFrames[0]
-        //        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
-        ninjaCat.position = updateLocation
-        ninjaCat.zPosition = CGFloat(ZPositions.player.rawValue)
-        ninjaCat.size = CGSize(width: 357, height: 477)
-        ninjaCat.name = "ninjaCatPunch"
+//        ninjaCat.size = CGSize(width: 136, height: 301)
+        ninjaCat.size = CGSize(width: 257, height: 449)
+        ninjaCat.name = "ninjaCatRun"
         addChild(ninjaCat)
     }
     
     //animate ninja cat to punch
-    func animateAttackPunch()
+    func animateRun()
     {
         ninjaCat.run(SKAction.repeatForever(
             SKAction.animate(with: ninjaCatAnimationFrames,
                              timePerFrame: 0.1,
                              resize: false,
                              restore: true)),
-                     withKey:"attackPunchInPlaceNinjaCat")
+                     withKey:"runInPlaceNinjaCat")
+    }
+    
+    func buildAttack()
+    {
+        let ninjaCatAnimatedAtlas = SKTextureAtlas(named: "Police_attack")
+        var attackFrames: [SKTexture] = []
+        
+        let numImages = ninjaCatAnimatedAtlas.textureNames.count
+        for i in 1...numImages
+        {
+            let ninjaCatTextureName = "police_attack_\(i)"
+            attackFrames.append(ninjaCatAnimatedAtlas.textureNamed(ninjaCatTextureName))
+        }
+        ninjaCatAnimationFrames = attackFrames
+        
+//        let firstFrameTexture = ninjaCatAnimationFrames[0]
+//        ninjaCat = SKSpriteNode(texture: firstFrameTexture)
+//        ninjaCat.position = updateLocation
+        ninjaCat.position = CGPoint(x: frame.midX, y: frame.midY)
+        ninjaCat.zPosition = CGFloat(ZPositions.player.rawValue)
+//        ninjaCat.size = CGSize(width: 136, height: 301)
+        ninjaCat.size = CGSize(width: 357, height: 477)
+        ninjaCat.name = "ninjaCatAttack"
+        addChild(ninjaCat)
+    }
+    
+    //animate ninja cat to kick
+    func animateAttack()
+    {
+        ninjaCat.run(SKAction.repeatForever(
+            SKAction.animate(with: ninjaCatAnimationFrames,
+                             timePerFrame: 0.1,
+                             resize: false,
+                             restore: true)),
+                     withKey:"attackInPlaceBear")
     }
     
     //Moving the Bear Around the Screen
@@ -163,40 +196,103 @@ class GameScene: SKScene
         {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            if touchedNode.name == "KickButton"
+            if touchedNode.name == "ObatButton"
             {
                 // Call the function here.
                 backgroundColor = .black
                 audioReady.audioClick()
                 removeAnimation()
-                buildAttackKick()
-                animateAttackKick()
-                print("Tombol kick berhasil ditekan")
+                buildAttack()
+                animateAttack()
+                print("Tombol obat berhasil ditekan")
+                smileEmojiView.texture = SKTexture(imageNamed: "SadEmoji.png")
+                progressBarView.texture = SKTexture(imageNamed: "ProgressBarEmoticons1%.png")
             }
-            else if touchedNode.name == "PunchButton"
+            else if touchedNode.name == "MakanButton"
             {
                 // Call the function here.
                 backgroundColor = .yellow
                 audioReady.audioClick()
                 removeAnimation()
-                buildAttackPunch()
-                animateAttackPunch()
-                print("Tombol punch berhasil ditekan")
+                buildRun()
+                animateRun()
+                print("Tombol makan berhasil ditekan")
+                smileEmojiView.texture = SKTexture(imageNamed: "ScareEmoji.png")
+                progressBarView.texture = SKTexture(imageNamed: "ProgressBarEmoticons25%.png")
             }
-            else if touchedNode.name == "WalkButton"
+            else if touchedNode.name == "DanceButton"
             {
                 // Call the function here.
                 backgroundColor = .green
                 audioReady.audioPlay()
                 removeAnimation()
-                buildWalk()
-                animateWalk()
-                print("Tombol punch berhasil ditekan")
+                buildDance()
+                animateDance()
+                print("Tombol dance berhasil ditekan")
+                smileEmojiView.texture = SKTexture(imageNamed: "ConfuseEmoji.png")
+                progressBarView.texture = SKTexture(imageNamed: "ProgressBarEmoticons100%.png")
+            }
+            else if touchedNode.name == "BackButton"
+            {
+                // Call the function here.
+                //backgroundColor = .blue
+                removeAllChildren()
+                segue()
+                print("Tombol back berhasil ditekan")
             }
             else
             {
                 //moveNinjaCat(location: location)
                 print("Kucing jalan")
+            }
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        for touch in touches
+        {
+            let location = touch.location(in: self)
+            let touchedNode = atPoint(location)
+            if touchedNode.name == "ObatButton"
+            {
+                obatButton.position.x = location.x
+                obatButton.position.y = location.y
+                obatButton.zPosition = CGFloat(ZPositions.otherNodes.rawValue)
+                print("Obat Button Position :")
+                print("x: \(obatButton.position.x), y: \(obatButton.position.y)")
+            }
+            else if touchedNode.name == "MakanButton"
+            {
+                makanButton.position.x = location.x
+                makanButton.position.y = location.y
+                makanButton.zPosition = CGFloat(ZPositions.otherNodes.rawValue)
+                print("Makan Button Position :")
+                print("x: \(makanButton.position.x), y: \(makanButton.position.y)")
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        for touch in touches
+        {
+            let location = touch.location(in: self)
+            let touchedNode = atPoint(location)
+            if touchedNode.name == "ObatButton"
+            {
+                obatButton.position = CGPoint(x: 845, y: 532)
+                obatButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
+                if obatButton.position == CGPoint(x: frame.midX, y: frame.midY)
+                {
+                    smileEmojiView.texture = SKTexture(imageNamed: "SadEmoji.png")
+                    //obatButton.position = CGPoint(x: 845, y: 532)
+                }
+            }
+            else if touchedNode.name == "MakanButton"
+            {
+                makanButton.position = CGPoint(x: 815, y: 381)
+                makanButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
             }
         }
     }
@@ -209,17 +305,17 @@ class GameScene: SKScene
     func removeAnimation()
     {
         //remove child node from parent, biar kucingnya gak kagebunshin
-        if let child = self.childNode(withName: "ninjaCatWalk") as? SKSpriteNode
+        if let child = self.childNode(withName: "ninjaCatDance") as? SKSpriteNode
         {
             child.removeFromParent()
         }
         
-        if let child = self.childNode(withName: "ninjaCatKick") as? SKSpriteNode
+        if let child = self.childNode(withName: "ninjaCatRun") as? SKSpriteNode
         {
             child.removeFromParent()
         }
         
-        if let child = self.childNode(withName: "ninjaCatPunch") as? SKSpriteNode
+        if let child = self.childNode(withName: "ninjaCatAttack") as? SKSpriteNode
         {
             child.removeFromParent()
         }
@@ -254,10 +350,10 @@ class GameScene: SKScene
         updateLocation = location
         //animate the ninja cat
         // 1
-        if ninjaCat.action(forKey: "walkingInPlaceNinjaCat") == nil
+        if ninjaCat.action(forKey: "dancingInPlaceNinjaCat") == nil
         {
             // if legs are not moving, start them
-            animateWalk()
+            animateDance()
         }
         
         // 2
@@ -271,6 +367,11 @@ class GameScene: SKScene
         // 4
         let moveActionWithDone = SKAction.sequence([moveAction, doneAction])
         ninjaCat.run(moveActionWithDone, withKey:"ninjaCatMoving")
+    }
+    
+    func segue()
+    {
+        viewController?.performSegue(withIdentifier: "push", sender: viewController)
     }
     
     //    //Changing Animation Facing Direction
@@ -292,7 +393,7 @@ class GameScene: SKScene
     //        }
     //
     //        ninjaCat.xScale = abs(ninjaCat.xScale) * multiplierForDirection
-    //        animateWalk()
+    //        animateDance()
     //    }
 }
 
