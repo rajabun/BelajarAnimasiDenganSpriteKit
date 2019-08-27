@@ -16,7 +16,12 @@ enum ZPositions: Int
     case otherNodes
 }
 
-class GameScene: SKScene
+struct ColliderType
+{
+    
+}
+
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     private var ninjaCat = SKSpriteNode()
     private var ninjaCatAnimationFrames: [SKTexture] = []
@@ -30,19 +35,42 @@ class GameScene: SKScene
     var progressBarView = SKSpriteNode(imageNamed: "ProgressBarEmoticons50%.png")
 //    let halfOvalImage = SKSpriteNode(imageNamed: "HalfOvalPlayMenu.png")
     
+    //yang gerak
+    let ObatCategory   : UInt32 = 0x1 << 0
+    let MakanCategory : UInt32 = 0x1 << 1
+    
+    //yang diem
+    let PlayerCategory : UInt32 = 0x1 << 2
+    
+    //disentuh atau nggak
+    var isFingerOnTouch = false
+    
     var audioReady = AudioModel()
     var viewController: UIViewController?
     
     override func didMove(to view: SKView)
     {
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
+        physicsWorld.contactDelegate = self
+        
+        buildChildNodes()
+        
+        buildDance()
+        animateDance()
+        
+        //buildPhysics()
+    }
+    
+    func buildChildNodes()
+    {
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         background.zPosition = CGFloat(ZPositions.background.rawValue)
         addChild(background)
         
-//        halfOvalImage.position = CGPoint(x: 830, y: 365)
-//        background.zPosition = CGFloat(ZPositions.foreground.rawValue)
-//        halfOvalImage.name = "HalfOval"
-//        addChild(halfOvalImage)
+        //        halfOvalImage.position = CGPoint(x: 830, y: 365)
+        //        background.zPosition = CGFloat(ZPositions.foreground.rawValue)
+        //        halfOvalImage.name = "HalfOval"
+        //        addChild(halfOvalImage)
         
         obatButton.position = CGPoint(x: 845, y: 532)
         obatButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
@@ -79,9 +107,6 @@ class GameScene: SKScene
         //progressBarView.size = CGSize(width: 79, height: 79)
         progressBarView.name = "ProgressBarView"
         addChild(progressBarView)
-        
-        buildDance()
-        animateDance()
     }
     
     func buildDance()
@@ -106,6 +131,25 @@ class GameScene: SKScene
         ninjaCat.size = CGSize(width: 386, height: 422)
         ninjaCat.name = "ninjaCatDance"
         addChild(ninjaCat)
+    }
+    
+    func buildPhysics()
+    {
+        ninjaCat.physicsBody = SKPhysicsBody(rectangleOf: ninjaCat.size)
+        obatButton.physicsBody = SKPhysicsBody(rectangleOf: obatButton.size)
+        makanButton.physicsBody = SKPhysicsBody(rectangleOf: makanButton.size)
+        
+        //yang gerak
+        obatButton.physicsBody!.categoryBitMask = ObatCategory
+        makanButton.physicsBody!.categoryBitMask = MakanCategory
+        
+        //        obatButton.physicsBody!.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
+        
+        //yang diem
+        ninjaCat.physicsBody!.categoryBitMask = PlayerCategory
+        
+        //tombol obat kontak dengan karakter
+        obatButton.physicsBody!.contactTestBitMask = PlayerCategory
     }
     
     func animateDance()
@@ -285,7 +329,8 @@ class GameScene: SKScene
                 obatButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
                 if obatButton.position == CGPoint(x: frame.midX, y: frame.midY)
                 {
-                    smileEmojiView.texture = SKTexture(imageNamed: "SadEmoji.png")
+                    smileEmojiView.texture = SKTexture(imageNamed: "SmileEmoji.png")
+                    print("Node Detected")
                     //obatButton.position = CGPoint(x: 845, y: 532)
                 }
             }
@@ -294,6 +339,38 @@ class GameScene: SKScene
                 makanButton.position = CGPoint(x: 815, y: 381)
                 makanButton.zPosition = CGFloat(ZPositions.foreground.rawValue)
             }
+//            if let body = physicsWorld.body(at: location)
+//            {
+//                if body.node!.name == "ObatButton"
+//                {
+//                    print("Began touch on paddle")
+//                    isFingerOnTouch = true
+//                }
+//            }
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact)
+    {
+        //self.physicsWorld.contactDelegate = self
+        // 1
+        var firstBody = SKPhysicsBody(rectangleOf: ninjaCat.size)
+        var secondBody = SKPhysicsBody(rectangleOf: obatButton.size)
+        // 2
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask
+        {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }
+        else
+        {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        // 3
+        if firstBody.categoryBitMask == ObatCategory && secondBody.categoryBitMask == PlayerCategory
+        {
+            print("Hit player. First contact has been made.")
         }
     }
     
