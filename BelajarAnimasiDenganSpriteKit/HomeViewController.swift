@@ -14,13 +14,49 @@ class HomeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "HomeBackgroundWithBackground.png")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "HomeBackgroundWithRectangle.png")!)
 //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
 //        backgroundImage.image = UIImage(named: "HomeBackgroundWithBackground.png")
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func periksaTubuhButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    @IBAction func daftarKegiatanButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    @IBAction func catatanKesehatanButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    
+    @IBAction func areaOrangTuaButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    
+    @IBAction func playButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    @IBAction func polisiButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
+    @IBAction func rewardButtonAction(_ sender: UIButton)
+    {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

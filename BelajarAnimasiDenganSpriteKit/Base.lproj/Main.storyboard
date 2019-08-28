@@ -33,6 +33,64 @@
                     <view key="view" contentMode="scaleToFill" id="bae-8e-NJa">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moI-AJ-H8C" userLabel="Periksa Tubuh Button">
+                                <rect key="frame" x="58" y="113" width="330" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="PeriksaTubuhButton"/>
+                                <connections>
+                                    <action selector="periksaTubuhButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="Dsz-4b-L4V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svU-Hh-P6a" userLabel="Daftar Kegiatan Button">
+                                <rect key="frame" x="62" y="224" width="323" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="DaftarKegiatanButton"/>
+                                <connections>
+                                    <action selector="daftarKegiatanButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="o8O-jC-Icb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iV7-Jf-mxe" userLabel="Catatan Kesehatan Button">
+                                <rect key="frame" x="62" y="328" width="323" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="CatatanKesehatanButton"/>
+                                <connections>
+                                    <action selector="catatanKesehatanButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="LJX-3J-K4c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz9-zs-fMC" userLabel="Area Orang Tua Button">
+                                <rect key="frame" x="63" y="432" width="321" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="AreaOrangTuaButton"/>
+                                <connections>
+                                    <action selector="areaOrangTuaButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="l3a-sj-fZE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-Yp-7XF" userLabel="Play Button">
+                                <rect key="frame" x="147" y="575" width="160" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="PlayButton"/>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="O0l-mg-tgH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnd-E5-P7I" userLabel="Reward Button">
+                                <rect key="frame" x="313" y="626" width="110" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="RewardButton"/>
+                                <connections>
+                                    <action selector="rewardButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="xUd-qM-XpW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rih-Mr-3tm" userLabel="Polisi Button">
+                                <rect key="frame" x="35" y="626" width="106" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="PolisiButton"/>
+                                <connections>
+                                    <action selector="polisiButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="whI-ZC-wva"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.1907650846" green="0.64379758880000004" blue="0.23095728160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="pCd-IS-zR9"/>
                     </view>
@@ -42,4 +100,13 @@
             <point key="canvasLocation" x="823" y="23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AreaOrangTuaButton" width="321" height="95"/>
+        <image name="CatatanKesehatanButton" width="323" height="95"/>
+        <image name="DaftarKegiatanButton" width="323" height="95"/>
+        <image name="PeriksaTubuhButton" width="330" height="111"/>
+        <image name="PlayButton" width="160" height="156"/>
+        <image name="PolisiButton" width="106" height="105"/>
+        <image name="RewardButton" width="110" height="105"/>
+    </resources>
 </document>
