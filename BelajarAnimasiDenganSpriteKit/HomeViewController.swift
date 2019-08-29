@@ -17,7 +17,7 @@ class HomeViewController: UIViewController
     {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: UIImage(named: "HomeBackgroundWithRectangle.png")!)
-        characterImage.image  = UIImage(named: "Police")
+        characterImage.image  = UIImage(named: "HomePolice")
         balloonImage.image  = UIImage(named: "HomeFillCloud")
 //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
 //        backgroundImage.image = UIImage(named: "HomeBackgroundWithBackground.png")
