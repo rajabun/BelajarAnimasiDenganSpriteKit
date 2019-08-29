@@ -15,8 +15,8 @@ class AudioModel
     //Function for play a background audio
     func audioPlay()
     {
-        let path = Bundle.main.path(forResource: "Joy&Calm", ofType: "m4a")!
-        let url = URL(fileURLWithPath: path)
+        let path = Bundle.main.path(forResource: "Joy & Calm", ofType: "m4a")
+        let url = URL(fileURLWithPath: path!)
         
         do
         {
