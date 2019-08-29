@@ -11,10 +11,14 @@ import UIKit
 class HomeViewController: UIViewController
 {
 
+    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var balloonImage: UIImageView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: UIImage(named: "HomeBackgroundWithRectangle.png")!)
+        characterImage.image  = UIImage(named: "Police")
+        balloonImage.image  = UIImage(named: "HomeFillCloud")
 //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
 //        backgroundImage.image = UIImage(named: "HomeBackgroundWithBackground.png")
         // Do any additional setup after loading the view.
@@ -44,7 +48,7 @@ class HomeViewController: UIViewController
     
     @IBAction func playButtonAction(_ sender: UIButton)
     {
-        
+        performSegue(withIdentifier: "HomeToPlayIdentifier", sender: self)
     }
     
     @IBAction func polisiButtonAction(_ sender: UIButton)

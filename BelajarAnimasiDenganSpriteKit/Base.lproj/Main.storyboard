@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Zf-Ev-A1A">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
-                        <segue destination="4Zf-Ev-A1A" kind="show" identifier="push" id="2Zu-81-DPy"/>
+                        <segue destination="4Zf-Ev-A1A" kind="show" identifier="PlayToHomeIdentifier" id="2Zu-81-DPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -72,6 +72,7 @@
                                 <state key="normal" backgroundImage="PlayButton"/>
                                 <connections>
                                     <action selector="playButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="O0l-mg-tgH"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="HomeToPlayIdentifier" id="yhc-hm-KuM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnd-E5-P7I" userLabel="Reward Button">
@@ -90,10 +91,22 @@
                                     <action selector="polisiButtonAction:" destination="4Zf-Ev-A1A" eventType="touchUpInside" id="whI-ZC-wva"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Police" translatesAutoresizingMaskIntoConstraints="NO" id="vnK-AV-fr4">
+                                <rect key="frame" x="749" y="229" width="221" height="489"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFillCloud" translatesAutoresizingMaskIntoConstraints="NO" id="dwn-hO-WKY">
+                                <rect key="frame" x="435" y="74" width="352" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1907650846" green="0.64379758880000004" blue="0.23095728160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="pCd-IS-zR9"/>
                     </view>
+                    <connections>
+                        <outlet property="balloonImage" destination="dwn-hO-WKY" id="xrx-8K-AFC"/>
+                        <outlet property="characterImage" destination="vnK-AV-fr4" id="eaL-VW-DpP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOL-ZC-mmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,8 +117,10 @@
         <image name="AreaOrangTuaButton" width="321" height="95"/>
         <image name="CatatanKesehatanButton" width="323" height="95"/>
         <image name="DaftarKegiatanButton" width="323" height="95"/>
+        <image name="HomeFillCloud" width="392" height="216"/>
         <image name="PeriksaTubuhButton" width="330" height="111"/>
         <image name="PlayButton" width="160" height="156"/>
+        <image name="Police" width="210" height="484"/>
         <image name="PolisiButton" width="106" height="105"/>
         <image name="RewardButton" width="110" height="105"/>
     </resources>

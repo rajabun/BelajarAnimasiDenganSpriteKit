@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4E526D2A23138DFD00ACA520 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4E5D734C23166C93009D6CC6 /* Joy & Calm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joy & Calm.m4a"; sourceTree = "<group>"; };
+		4E5D734C23166C93009D6CC6 /* Joy&Calm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joy&Calm.m4a"; sourceTree = "<group>"; };
 		4E5D734D23166C9B009D6CC6 /* Switch-Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Switch-Click.wav"; sourceTree = "<group>"; };
 		4E8A9A0D230E9F2800A90EC1 /* PoliceCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceCharacter.swift; sourceTree = "<group>"; };
 		4E8A9A15230FD2D500A90EC1 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5D734D23166C9B009D6CC6 /* Switch-Click.wav */,
-				4E5D734C23166C93009D6CC6 /* Joy & Calm.m4a */,
+				4E5D734C23166C93009D6CC6 /* Joy&Calm.m4a */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
