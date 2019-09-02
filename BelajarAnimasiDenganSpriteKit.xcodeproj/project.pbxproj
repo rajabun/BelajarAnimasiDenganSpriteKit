@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5259EE2319380200F591C4 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5259ED2319380200F591C4 /* SegueFromLeft.swift */; };
 		4E526D2B23138DFD00ACA520 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E526D2A23138DFD00ACA520 /* HomeViewController.swift */; };
 		4E5D734E23166C9B009D6CC6 /* Switch-Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D734D23166C9B009D6CC6 /* Switch-Click.wav */; };
 		4E5D735223177921009D6CC6 /* Joy & Calm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D735123177921009D6CC6 /* Joy & Calm.m4a */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E5259ED2319380200F591C4 /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		4E526D2A23138DFD00ACA520 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4E5D734D23166C9B009D6CC6 /* Switch-Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Switch-Click.wav"; sourceTree = "<group>"; };
 		4E5D735123177921009D6CC6 /* Joy & Calm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Joy & Calm.m4a"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8A9A0D230E9F2800A90EC1 /* PoliceCharacter.swift */,
+				4E5259ED2319380200F591C4 /* SegueFromLeft.swift */,
 				4E8A9A15230FD2D500A90EC1 /* AudioModel.swift */,
 				4EF8CEF1230BE3730095E044 /* BelajarAnimasiDenganSpriteKit */,
 				4EF8CEF0230BE3730095E044 /* Products */,
@@ -201,6 +204,7 @@
 			files = (
 				4EF8CEF9230BE3730095E044 /* GameScene.swift in Sources */,
 				4EF8CEFB230BE3740095E044 /* GameViewController.swift in Sources */,
+				4E5259EE2319380200F591C4 /* SegueFromLeft.swift in Sources */,
 				4EF8CEF3230BE3730095E044 /* AppDelegate.swift in Sources */,
 				4E8A9A0E230E9F2800A90EC1 /* PoliceCharacter.swift in Sources */,
 				4E8A9A16230FD2D500A90EC1 /* AudioModel.swift in Sources */,

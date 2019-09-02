@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
-                        <segue destination="4Zf-Ev-A1A" kind="show" identifier="PlayToHomeIdentifier" id="2Zu-81-DPy"/>
+                        <segue destination="4Zf-Ev-A1A" kind="custom" identifier="PlayToHomeIdentifier" customClass="SegueFromLeft" customModule="BelajarAnimasiDenganSpriteKit" customModuleProvider="target" id="2Zu-81-DPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

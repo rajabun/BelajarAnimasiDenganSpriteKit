@@ -141,27 +141,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     
     func buildPhysics()
     {
-        ninjaCat.physicsBody = SKPhysicsBody(rectangleOf: ninjaCat.size)
+        ninjaCat.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 200))
         obatButton.physicsBody = SKPhysicsBody(rectangleOf: obatButton.size)
         makanButton.physicsBody = SKPhysicsBody(rectangleOf: makanButton.size)
         
         //yang gerak dibikin satu aja kategorinya gapapa gausah tiap node dibikin
+        //kalau dua node melakukan hal yang sama, bisa dibikin satu kategori saja
         obatButton.physicsBody!.categoryBitMask = ObatCategory
         makanButton.physicsBody!.categoryBitMask = ObatCategory
+//        makanButton.physicsBody!.categoryBitMask = MakanCategory
         
         //yang diem
         ninjaCat.physicsBody!.categoryBitMask = PlayerCategory
         
-        obatButton.physicsBody!.collisionBitMask = ObatCategory
-        makanButton.physicsBody!.collisionBitMask = ObatCategory
+        //deteksi dan simulasi collision
+//        obatButton.physicsBody!.collisionBitMask = ObatCategory
+//        makanButton.physicsBody!.collisionBitMask = ObatCategory
         ninjaCat.physicsBody!.collisionBitMask = PlayerCategory
+        
+        //jika collisionBitMasknya bernilai 0, maka collision tidak disimulasikan. Tidak tabrakan
+        obatButton.physicsBody!.collisionBitMask = 0
+        makanButton.physicsBody!.collisionBitMask = 0
+//        ninjaCat.physicsBody!.collisionBitMask = 0
         
         //        obatButton.physicsBody!.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
         
-        //tombol obat kontak dengan karakter
+        //deteksi tombol obat dan makan melakukan kontak dengan karakter
         obatButton.physicsBody!.contactTestBitMask = PlayerCategory
         makanButton.physicsBody!.contactTestBitMask = PlayerCategory
         ninjaCat.physicsBody!.contactTestBitMask = ObatCategory
+//        ninjaCat.physicsBody!.contactTestBitMask = ObatCategory | MakanCategory
     }
     
     func animateDance()
@@ -289,7 +298,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
                 // Call the function here.
                 //backgroundColor = .blue
                 //removeAllChildren()
-                self.gameViewController?.performSegue(withIdentifier: "PlayToHomeIdentifier", sender: self)
+                segueToHome()
                 print("Tombol back berhasil ditekan")
             }
             else
@@ -358,6 +367,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         }
     }
     
+    func segueToHome()
+    {
+        audioReady.audioStop()
+        self.gameViewController?.performSegue(withIdentifier: "PlayToHomeIdentifier", sender: gameViewController)
+    }
+    
     func changeProgressBarTexture()
     {
         if textureProgressBarCounter == 1
@@ -381,6 +396,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         else if textureProgressBarCounter == 4
         {
             textureProgressBarCounter += 1
+            smileEmojiView.texture = SKTexture(imageNamed: "HappyEmoji.png")
+            progressBarView.texture = SKTexture(imageNamed: "ProgressBarEmoticons100%.png")
+        }
+        else if textureProgressBarCounter == 5
+        {
             smileEmojiView.texture = SKTexture(imageNamed: "HappyEmoji.png")
             progressBarView.texture = SKTexture(imageNamed: "ProgressBarEmoticons100%.png")
         }
